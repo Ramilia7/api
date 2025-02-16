@@ -1,0 +1,425 @@
+{
+	"info": {
+		"_postman_id": "9a7b9c99-93f5-42f1-aa82-2e0bacf7622e",
+		"name": "Random",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24148348",
+		"_collection_link": "https://www.postman.com/volozhanin-iteam/workspace/random/collection/24148348-9a7b9c99-93f5-42f1-aa82-2e0bacf7622e?action=share&source=collection_link&creator=24148348"
+	},
+	"item": [
+		{
+			"name": "добавить новый продукт с рандомным названием",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseText = pm.response.text();",
+							"let idMatch = responseText.match(/ID:\\s*(\\d+)/);",
+							"",
+							"if (idMatch) {",
+							"    pm.environment.set(\"product_id\", idMatch[1]);",
+							"} else {",
+							"    console.log(\"ID не найден в ответе\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"{{$randomProductName}}\",\n  \"description\": \"This is an example product.\",\n  \"price\": 100,\n  \"category\": \"Electronics\",\n  \"manufacturer\": \"Example Manufacturer\",\n  \"imageUrl\": \"http://example.com/image.jpg\",\n  \"freeShipping\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/add-product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"add-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "добавить новый продукт с рандомным описанием",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseText = pm.response.text();",
+							"let idMatch = responseText.match(/ID:\\s*(\\d+)/);",
+							"",
+							"if (idMatch) {",
+							"    pm.environment.set(\"product_id\", idMatch[1]);",
+							"} else {",
+							"    console.log(\"ID не найден в ответе\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"{{$randomProductName}}\",\n  \"description\": \"{{$randomCatchPhraseDescriptor}}\",\n  \"price\": 50,\n  \"category\": \"Electronics\",\n  \"manufacturer\": \"Example Manufacturer\",\n  \"imageUrl\": \"http://example.com/image.jpg\",\n  \"freeShipping\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/add-product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"add-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "добавить новый продукт с рандомной ценой",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseText = pm.response.text();",
+							"let idMatch = responseText.match(/ID:\\s*(\\d+)/);",
+							"",
+							"if (idMatch) {",
+							"    pm.environment.set(\"product_id\", idMatch[1]);",
+							"} else {",
+							"    console.log(\"ID не найден в ответе\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"{{$randomProductName}}\",\n  \"description\": \"{{$randomCatchPhraseDescriptor}}\",\n  \"price\": {{$randomPrice}},\n  \"category\": \"Electronics\",\n  \"manufacturer\": \"Example Manufacturer\",\n  \"imageUrl\": \"http://example.com/image.jpg\",\n  \"freeShipping\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/add-product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"add-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "добавить новый продукт с рандомными значениями в ссылке на изображение",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseText = pm.response.text();",
+							"let idMatch = responseText.match(/ID:\\s*(\\d+)/);",
+							"",
+							"if (idMatch) {",
+							"    pm.environment.set(\"product_id\", idMatch[1]);",
+							"} else {",
+							"    console.log(\"ID не найден в ответе\");",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"{{$randomProductName}}\",\n  \"description\": \"{{$randomCatchPhraseDescriptor}}\",\n  \"price\": {{$randomPrice}},\n  \"category\": \"Electronics\",\n  \"manufacturer\": \"Example Manufacturer\",\n  \"imageUrl\": \"{{$randomImageUrl}}\",\n  \"freeShipping\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/add-product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"add-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "добавить новый продукт с рандомными значениями в доставке",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseText = pm.response.text();",
+							"let idMatch = responseText.match(/ID:\\s*(\\d+)/);",
+							"",
+							"if (idMatch) {",
+							"    pm.environment.set(\"product_id\", idMatch[1]);",
+							"} else {",
+							"    console.log(\"ID не найден в ответе\");",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Получаем и сохраняем части тела запроса перед его отправкой",
+							"let productName = pm.variables.replaceIn(\"{{$randomProductName}}\");",
+							"let description = pm.variables.replaceIn(\"{{$randomCatchPhraseDescriptor}}\");",
+							"let price = pm.variables.replaceIn(\"{{$randomPrice}}\");",
+							"let imageUrl = pm.variables.replaceIn(\"{{$randomImageUrl}}\");",
+							"let freeShipping = pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"",
+							"pm.environment.set(\"productName\", productName);",
+							"pm.environment.set(\"description\", description);",
+							"pm.environment.set(\"price\", price);",
+							"pm.environment.set(\"imageUrl\", imageUrl);",
+							"pm.environment.set(\"freeShipping\", freeShipping);",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"{{productName}}\",\n  \"description\": \"{{description}}\",\n  \"price\": {{price}},\n  \"category\": \"Electronics\",\n  \"manufacturer\": \"Example Manufacturer\",\n  \"imageUrl\": \"{{imageUrl}}\",\n  \"freeShipping\": {{freeShipping}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/add-product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"add-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "добавить новый продукт с рандомными значениями в доставке",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"let responseText = pm.response.text();",
+							"let idMatch = responseText.match(/ID:\\s*(\\d+)/);",
+							"",
+							"if (idMatch) {",
+							"    pm.environment.set(\"product_id\", idMatch[1]);",
+							"} else {",
+							"    console.log(\"ID не найден в ответе\");",
+							"}",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Получаем и сохраняем части тела запроса перед его отправкой",
+							"let productName = pm.variables.replaceIn(\"{{$randomProductName}}\");",
+							"let description = pm.variables.replaceIn(\"{{$randomCatchPhraseDescriptor}}\");",
+							"let price = pm.variables.replaceIn(\"{{$randomPrice}}\");",
+							"let imageUrl = pm.variables.replaceIn(\"{{$randomImageUrl}}\");",
+							"let freeShipping = pm.variables.replaceIn(\"{{$randomBoolean}}\");",
+							"",
+							"pm.environment.set(\"productName\", productName);",
+							"pm.environment.set(\"description\", description);",
+							"pm.environment.set(\"price\", price);",
+							"pm.environment.set(\"imageUrl\", imageUrl);",
+							"pm.environment.set(\"freeShipping\", freeShipping);",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"{{productName}}\",\n  \"description\": \"{{description}}\",\n  \"price\": {{price}},\n  \"category\": \"Electronics\",\n  \"manufacturer\": \"Example Manufacturer\",\n  \"imageUrl\": \"{{imageUrl}}\",\n  \"freeShipping\": {{freeShipping}}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/add-product",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"add-product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "поиск товара по ID",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/products/id/{{product_id}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"products",
+						"id",
+						"{{product_id}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
